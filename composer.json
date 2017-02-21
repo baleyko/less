@@ -1,0 +1,57 @@
+{
+    "name": "baleyko/less"
+  , "description": "Helpful functions for rapid prototyping."
+  , "type": "library"
+  , "license": "MIT"
+  , "minimum-stability": "stable"
+  , "authors": [
+    {
+        "name" : "Valery Baleyko"
+      , "email" : "baleyko@gmail.com"
+    }
+  ]
+  , "require": {
+    "php": ">=7.0"
+  }
+  , "require-dev": {
+      "phpunit/phpunit": "~6.0"
+    , "squizlabs/php_codesniffer": "~2.8"
+    , "satooshi/php-coveralls": "~1.0"
+  }
+  , "suggest": {
+    "ext-PDO": "*"
+  }
+  , "autoload": {
+    "files": [
+        "src/Match/match.php"
+      , "src/Match/regex.php"
+      , "src/Http/isGet.php"
+      , "src/Http/isPost.php"
+      , "src/Http/isPut.php"
+      , "src/Http/isDelete.php"
+      , "src/Http/isOptions.php"
+      , "src/Http/isHead.php"
+      , "src/Http/isTrace.php"
+      , "src/Http/isPatch.php"
+      , "src/Http/isXHR.php"
+      , "src/Http/getParam.php"
+      , "src/Http/getQuery.php"
+      , "src/Http/getMethod.php"
+      , "src/Http/getReferrer.php"
+      , "src/Http/getUri.php"
+      , "src/Http/redirect.php"
+      , "src/PDO/result.php"
+      , "src/PDO/rows.php"
+      , "src/PDO/row.php"
+      , "src/PDO/column.php"
+      , "src/PDO/cell.php"
+      , "src/Runtime/run.php"
+      , "src/Runtime/terminate.php"
+    ]
+  }
+  , "extra": {
+    "branch-alias": {
+      "dev-master": "develop"
+    }
+  }
+}

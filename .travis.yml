@@ -1,0 +1,27 @@
+language: php
+matrix:
+  fast_finish: true
+  include:
+    - php: 7
+    - php: hhvm
+  allow_failures:
+    - php: hhvm
+cache:
+  directories:
+    - vendor
+    - $HOME/.composer/cache
+before_install:
+  - travis_retry composer self-update
+install:
+  - travis_retry composer install --dev --no-interaction --ignore-platform-reqs --prefer-source --no-scripts
+script:
+  - travis_retry php vendor/bin/phpcs ./src --standard=PSR1 --encoding=utf-8
+  - travis_retry php vendor/bin/phpcs ./src --standard=PSR2 --encoding=utf-8
+  - travis_retry php vendor/bin/phpunit --verbose --coverage-clover=.reports/clover.xml
+after_success:
+  - travis_retry php vendor/bin/coveralls -v
+branches:
+  only:
+    - develop
+notifications:
+  email: "baleyko@gmail.com"

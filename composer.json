@@ -45,6 +45,8 @@
       , "src/PDO/row.php"
       , "src/PDO/column.php"
       , "src/PDO/cell.php"
+      , "src/PDO/objects.php"
+      , "src/PDO/object.php"
       , "src/Runtime/run.php"
       , "src/Runtime/terminate.php"
     ]

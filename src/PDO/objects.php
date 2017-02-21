@@ -15,10 +15,18 @@ namespace Less\PDO;
  * @param \PDO $pdo
  * @param string $query
  * @param array $params
- * @return boolean
+ * @param string $class
+ * @return object
  */
-function result(\PDO $pdo, string $query, array $params = []) : bool
+function objects(\PDO $pdo, string $query, array $params = [], string $class = \stdClass::class) : array
 {
     $stmt = $pdo->prepare((string) $query);
-    return $stmt->execute($params);
+    $stmt->execute($params);
+
+    $objects = [];
+    while ($object = $stmt->fetchObject($class)) {
+        $objects[] = $object;
+    }
+
+    return $object;
 }

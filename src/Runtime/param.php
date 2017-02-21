@@ -24,7 +24,7 @@ function param(string $name, bool $flag = PARAM_DEFAULT)
 {
     if (is_null($flag)) {
         $mask = $name;
-    } else if ($flag) {
+    } elseif ($flag) {
         $mask = sprintf('%s:', $name);
     } else {
         $mask = sprintf('%s::', $name);
@@ -32,5 +32,7 @@ function param(string $name, bool $flag = PARAM_DEFAULT)
 
     $param = getopt($mask);
 
-    if ($param) return $param[$name];
+    if ($param) {
+        return $param[$name];
+    }
 }

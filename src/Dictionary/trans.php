@@ -17,8 +17,7 @@ namespace Less\Dictionary;
  */
 function trans($dict) : string
 {
-    return function (string $key, int $index = 0) use ($dict) : string
-    {
+    return function (string $key, int $index = 0) use ($dict) : string {
         $value = $dict[$key] ?? $key;
 
         return is_array($value) ? $value[$index] : $value;
